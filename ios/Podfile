@@ -36,7 +36,7 @@ target 'ReactNativeTemplateWalletConnect' do
       if target.name == 'CocoaAsyncSocket'
         source_files = target.source_build_phase.files
         dummy = source_files.find do |file|
-          file.file_ref.name == 'GCDAsyncSocket.m'
+          file.file_ref.name == 'GCDAsyncUdpSocket.m'
         end
 
         if dummy != nil

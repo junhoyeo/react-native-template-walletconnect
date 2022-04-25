@@ -5,7 +5,7 @@ module.exports = {
   trailingComma: 'all',
   semi: true,
 
-  // @trivago/prettier-plugin-sort-imports
+  // @ianvs/prettier-plugin-sort-imports
   importOrder: ['<THIRD_PARTY_MODULES>', '@/(.*)$', '^[./](.*)$'],
   importOrderSeparation: true,
   importOrderSortSpecifiers: true,
