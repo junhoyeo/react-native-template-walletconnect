@@ -1,55 +1,21 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import {
-  useWalletConnect,
-  withWalletConnect,
-} from '@walletconnect/react-native-dapp';
-import * as React from 'react';
-import {
-  SafeAreaView,
-  Text,
-  TouchableWithoutFeedback,
-  View,
-} from 'react-native';
+import { withWalletConnect } from '@walletconnect/react-native-dapp';
+import React from 'react';
 
-type ButtonProps = {
-  title: string;
-  onPress: () => void;
-};
-const Button: React.FC<ButtonProps> = ({ title, onPress }) => {
-  return (
-    <TouchableWithoutFeedback onPress={onPress}>
-      <Text>{title}</Text>
-    </TouchableWithoutFeedback>
-  );
-};
+import { HomeScreen } from './src/home/HomeScreen';
 
 const App: React.FC = () => {
-  const connector = useWalletConnect();
-
   return (
-    <SafeAreaView style={{ flex: 1 }}>
-      <View style={{ flex: 1 }}>
-        {!connector.connected ? (
-          <Button
-            title="Connect"
-            onPress={() => connector.connect().catch(console.error)}
-          />
-        ) : (
-          <Button
-            title="Kill Session"
-            onPress={() => connector.killSession()}
-          />
-        )}
-      </View>
-    </SafeAreaView>
+    //
+    <HomeScreen />
   );
 };
 
 export default withWalletConnect(App, {
   clientMeta: {
-    url: '',
-    icons: [''],
-    name: '',
+    url: 'https://ex.junho.io',
+    icons: ['https://ex.junho.io/android-chrome-512x512.png'],
+    name: 'Wallet',
     description: 'Connect with WalletConnect',
   },
   redirectUrl: 'yourappscheme://',
