@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "postinstall": "npx rn-nodeify --install fs,dgram,process,path,console,stream,crypto --hack",
+    "postinstall": "rn-nodeify --install fs,dgram,process,path,console,stream,crypto --hack",
     "android": "react-native run-android",
     "ios": "react-native run-ios",
     "start": "react-native start",
@@ -54,6 +54,7 @@
     "metro-react-native-babel-preset": "^0.67.0",
     "prettier": "^2.6.2",
     "react-test-renderer": "17.0.2",
+    "rn-nodeify": "^10.3.0",
     "typescript": "^4.4.4"
   },
   "resolutions": {
