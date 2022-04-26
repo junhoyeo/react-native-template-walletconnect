@@ -12,7 +12,7 @@
 }
 ```
 
-We use `rn-nodeify` to enable prerequisite support for Web3. Mostly this is to allow secure random number generation with `react-native-crypto`.
+We use [`rn-nodeify`](https://github.com/tradle/rn-nodeify) to enable prerequisite support for Web3. Mostly this is to allow secure random number generation with [`react-native-crypto`](https://github.com/tradle/react-native-crypto).
 
 ```ruby
 post_install do |installer|
@@ -36,4 +36,5 @@ post_install do |installer|
 end
 ```
 
-The code above in the iOS Podfile automatically removes duplicate symbol `GCDAsyncUdpSocket` caused by `react-native-udp`(`dgram`).
+The code above in the iOS Podfile automatically removes duplicate symbol `GCDAsyncUdpSocket` caused by `react-native-udp`—nodefied implementation of `dgram`(See https://github.com/tradle/react-native-udp/issues/113).
+
